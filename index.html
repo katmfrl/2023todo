@@ -126,9 +126,6 @@
 
         });
 
-        //stringify == 문자화 parse == 번역(가지고오는 역할)
-
-        //수정
 
         btnMoElem.addEventListener("click", function () {
             listData[numElem.value].todo = inpElem.value;
@@ -217,7 +214,6 @@
 
         function listAllDel() {
             listData = []
-
 
             //localStorage insert  
             let valueData = JSON.stringify(listData)
