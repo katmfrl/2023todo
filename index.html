@@ -11,8 +11,6 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-
-
         .allWarp {
             width: 500px;
             margin: 0 auto;
@@ -98,17 +96,17 @@
             display: flex;
             gap: 10px;
         }
-        
+
         .listView ul li .item {
-            padding-left: 5px ;
+            padding-left: 5px;
         }
 
 
         .item.done {
-            color : lightslategray;
-            text-decoration-line: line-through ;
-            text-decoration-color : black;
-            
+            color: lightslategray;
+            text-decoration-line: line-through;
+            text-decoration-color: black;
+
         }
 
 
@@ -144,7 +142,7 @@
             align-items: center;
         }
 
-        .mytime h2{
+        .mytime h2 {
             padding-left: 0px;
         }
     </style>
@@ -157,6 +155,7 @@
 
     <div class="allWarp">
         <h3 class="tiLogo">작심하루 계획표</h3>
+        <p><span id="toDate"></span></p>
         <div class="inpWrapper">
             <div class="inpWrap">
                 <input type="hidden" class="num"> <!--수정에 대한 칸-->
@@ -199,14 +198,13 @@
         const timeElem = document.querySelector(".mytime");
         const timeView = timeElem.querySelector("h1")
 
-         //날짜
-        const todayElem = document.getElementsByClassName('.myDate')
-        const onedayDate = document.createElement('div')
+
+
 
 
 
         //입력
-        
+
 
         btnIpElem.addEventListener("click", function () {
 
@@ -350,21 +348,14 @@
 
 
         //날짜를 보여주는 함수
-        function getToday(){
-            const date = new Date();
-            const yyyy = toDate.getFullYear();
-            const mm = String(toDate.getMonth() + 1).padStart(2, '0');
-            const dd = String(toDate.getDate()).padStart(2, '0');
-            const mymonthDate = `${yyyy}-${mm}-${dd}`;
-
-            onedayDate.classList.add('todayDate');
-            onedayDate.innerHTML =  `<span class="toDay">0000-00-00</span>`;
-            
-            todayElem.appendChild(onedayDate);
+        function getToday() {
+            moment().format('MMMM Do YYYY');
+            getToday();
         }
 
-
     </script>
+    <script src="/js/moment.js"></script>
+
 </body>
 
 </html>
